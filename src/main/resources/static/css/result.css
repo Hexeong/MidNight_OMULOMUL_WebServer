@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&family=New+Amsterdam&family=Noto+Sans+KR:wght@100..900&family=Playwrite+DK+Loopet:wght@100..400&family=Yeon+Sung&display=swap');
+
+
+html {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+
+body {
+    background-image: url("/img/certificate.png");
+    width: 1064px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container {
+    display: flex;
+    width: 100vw;
+    height: 50vh;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.head {
+    font-family: "Playwrite DK Loopet", cursive;
+    font-size: 50px;
+}
+
+.name-container {
+    display: flex;
+    justify-content: right;
+    width: 52%;
+}
+
+.name {
+
+}
+
+.content, .cur-date, .company {
+
+}

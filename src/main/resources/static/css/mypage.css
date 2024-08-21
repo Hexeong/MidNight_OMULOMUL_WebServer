@@ -1,0 +1,52 @@
+.result-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.result-card {
+    display: flex;
+    justify-content: space-around;
+    border: 3px solid;
+    border-radius: 15px;
+}
+
+.card-left {
+    width: 400px;
+    text-align: center;
+}
+
+.card-right {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 15px;
+}
+
+.card-right-text {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    font-family: "Do Hyeon", sans-serif;
+    font-size: 18px;
+}
+
+.card-right > button {
+    height: 50px;
+    width: 300px;
+    font-family: "Do Hyeon", sans-serif;
+    font-size: 18px;
+    color: white;
+    background-color: black;
+    border : 0;
+}
+
+.result-score {
+
+}
+
+.result-evaluation {
+
+}

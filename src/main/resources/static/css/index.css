@@ -1,0 +1,82 @@
+.intro-container {
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.intro-logo-image {
+    width: 850px;
+}
+
+.intro-text {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    padding-top: 20px;
+    padding-bottom: 40px;
+}
+
+.intro-text-left {
+    padding-top: 20px;
+    padding-left: 10px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    justify-content: start;
+}
+
+.intro-text-head {
+    font-family: "Do Hyeon", sans-serif;
+    font-size: 50px;
+}
+
+.intro-text-content {
+    line-height: 20px;
+}
+
+.download-button {
+    margin-top: 30px;
+    border: 0;
+    background-color: black;
+    color: white;
+    width: 250px;
+    font-size: 20px;
+    padding: 10px 0 10px 0;
+}
+
+.intro-text-right {
+    width: 400px;
+    border-radius: 20px;
+}
+
+.tutorial-container {
+    width: 850px;
+    height: 200px;
+    background-color: #5e788a;
+    background-image: url("/img/lineBackground.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.tutorial-p{
+    padding-top: 10px;
+    font-family: "Do Hyeon", sans-serif;
+    font-size: 80px;
+}
+
+.tutorial-info-container {
+    width: 850px;
+    height: 800px;
+}
+
+
+/*-----------------animate-----------------*/
+

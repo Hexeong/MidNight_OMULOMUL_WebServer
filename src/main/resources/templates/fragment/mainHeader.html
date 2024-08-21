@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header Fragment</title>
+</head>
+<body>
+<div th:fragment="header" class="header">
+    <a class="logo" th:href="@{/}">OmulOmul</a>
+    <div class="menu-bar">
+        <a id="tutorial">튜토리얼</a>
+        <a th:href="@{/mypage}">이수 정보</a>
+        <button
+            th:if="${session.username == null}"
+            th:onclick="|location.href='@{/user/login}'|"
+        >로그인</button>
+        <button
+            th:if="${session.username != null}"
+            th:onclick="|location.href='@{/user/logout}'|"
+        >로그아웃</button>
+    </div>
+</div>
+</body>
+</html>
