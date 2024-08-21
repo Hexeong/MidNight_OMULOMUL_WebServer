@@ -21,16 +21,16 @@ import java.nio.file.Paths;
 @RestController
 @RequestMapping("/file")
 public class FileController {
-    private final String uploadDir = "/files/";
+    private final String uploadDir = "src/main/resources/static/files/";
 
     @GetMapping("/download")
     public void downloadFile(HttpServletResponse response) throws IOException {
-        String path = uploadDir + "filename";
+        String path = uploadDir + "testFile.pdf";
 
         byte[] fileByte = FileUtils.readFileToByteArray(new File(path));
 
         response.setContentType("application/octet-stream");
-        response.setHeader("Content-Disposition", "attachment; fileName=\"" + URLEncoder.encode("tistory.png", "UTF-8")+"\";");
+        response.setHeader("Content-Disposition", "attachment; fileName=\"" + URLEncoder.encode("testFile.pdf", "UTF-8")+"\";");
         response.setHeader("Content-Transfer-Encoding", "binary");
 
         response.getOutputStream().write(fileByte);
