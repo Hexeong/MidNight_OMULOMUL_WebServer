@@ -16,8 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
         button.onclick = function(e) {
             // 클릭 시 실행할 로직
             const btn = e.target;
-            // alert('버튼이 클릭되었습니다: ' + btn.getAttribute("index"));
-            const resultNo = 1;
+            const resultNo = btn.getAttribute("index");
 
             let popOption = "width=1064px, height=736px"
             window.open("/result/" + resultNo.toString(), '수료증', popOption);

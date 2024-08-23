@@ -37,4 +37,23 @@ public class FileController {
         response.getOutputStream().flush();
         response.getOutputStream().close();
     }
+
+    @PostMapping("/upload")
+    public ResponseEntity<String> uploadWavFile(@RequestParam("file") MultipartFile file) {
+        if (!file.getContentType().equals("audio/wav")) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body("Only WAV files are allowed.");
+        }
+
+        // 파일 저장 경로 설정
+        String filePath = uploadDir + file.getOriginalFilename();
+
+        // 파일 저장
+        try {
+            file.transferTo(new File(filePath));
+            return ResponseEntity.ok("File uploaded successfully: " + filePath);
+        } catch (IOException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("File upload failed.");
+        }
+    }
 }

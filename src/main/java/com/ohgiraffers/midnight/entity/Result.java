@@ -29,6 +29,12 @@ public class Result {
     public Result() {
     }
 
+    public Result(int score, String cause, String userName) {
+        this.score = score;
+        this.cause = cause;
+        this.userName = userName;
+    }
+
     public Result(int score, String cause, LocalDateTime createdAt, String userName) {
         this.score = score;
         this.cause = cause;

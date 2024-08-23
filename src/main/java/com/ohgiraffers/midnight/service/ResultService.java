@@ -19,13 +19,20 @@ public class ResultService {
         return resultRepository.findResultsByUserName(userName);
     }
 
-    public void registResult(Map<String, Object> result) {
+    public void registResult(Map<String, Object> result, String username) {
         resultRepository.save(new Result(
             // TODO:: map에서 저장 로직 구현
+                (int) result.get("score"),
+                (String) result.get("reason"),
+                username
         ));
     }
 
     public Result findResultByResultNo(int resultNo) {
         return resultRepository.findResultByResultNo(resultNo);
+    }
+
+    public Result findRecentResult() {
+        return resultRepository.findTopByOrderByCreatedAtDesc();
     }
 }

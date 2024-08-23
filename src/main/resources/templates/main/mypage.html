@@ -15,52 +15,17 @@
     <div th:replace="~{fragment/mainHeader :: header}"></div>
     <div class="main-container">
         <div class="result-container">
-            <div class="result-card">
+            <div th:each="result : ${resultList}" class="result-card" >
                 <div class="card-left">
-                    <img th:src="@{/img/retry.jpg}">
+                    <img th:src="@{/img/{image}(image=${result.getScore() >= 60} ? 'veryGood.jpg' : 'retry.jpg')}" />
                 </div>
                 <div class="card-right">
                     <div class="card-right-text">
-                        <p class="result-score">
-                            점수 : 40점
+                        <p class="result-score" th:text="${'점수 : ' + result.getScore()}">
                         </p>
-                        <p class="result-evaluation">
-                            전체 평가 : 오물풍선 발견 시, 10cm라는 접촉 금지 반경은 너무 가까운 거리이며, 주변 사람들에게 알리는 방식도 적절하지 않습니다. 오물풍선에 접근하지 않고, 안전한 거리에서 관련 기관에 신고하는 것이 중요합니다. 따라서 행동이 적절하지 않다고 판단하여 점수를 낮게 매겼습니다.
-                        </p>
+                        <p class="result-evaluation" th:text="${'전체 평가 : ' + result.getCause()}"></p>
                     </div>
-                    <button index="resultId" class="certificateBtn">수료증 다운로드</button>
-                </div>
-            </div>
-            <div class="result-card">
-                <div class="card-left">
-                    <img th:src="@{/img/retry.jpg}">
-                </div>
-                <div class="card-right">
-                    <div class="card-right-text">
-                        <p class="result-score">
-                            점수 : 40점
-                        </p>
-                        <p class="result-evaluation">
-                            전체 평가 : 오물풍선 발견 시, 10cm라는 접촉 금지 반경은 너무 가까운 거리이며, 주변 사람들에게 알리는 방식도 적절하지 않습니다. 오물풍선에 접근하지 않고, 안전한 거리에서 관련 기관에 신고하는 것이 중요합니다. 따라서 행동이 적절하지 않다고 판단하여 점수를 낮게 매겼습니다.
-                        </p>
-                    </div>
-                    <button index="resultId" class="certificateBtn">수료증 다운로드</button>
-                </div>
-            </div>
-            <div class="result-card">
-                <div class="card-left">
-                    <img th:src="@{/img/retry.jpg}">
-                </div>
-                <div class="card-right">
-                    <div class="card-right-text">
-                        <p class="result-score">
-                            점수 : 40점
-                        </p>
-                        <p class="result-evaluation">
-                            전체 평가 : 오물풍선 발견 시, 10cm라는 접촉 금지 반경은 너무 가까운 거리이며, 주변 사람들에게 알리는 방식도 적절하지 않습니다. 오물풍선에 접근하지 않고, 안전한 거리에서 관련 기관에 신고하는 것이 중요합니다. 따라서 행동이 적절하지 않다고 판단하여 점수를 낮게 매겼습니다.
-                        </p>
-                    </div>
-                    <button index="resultId" class="certificateBtn">수료증 다운로드</button>
+                    <button th:index="${result.getResultNo()}" class="certificateBtn">수료증 다운로드</button>
                 </div>
             </div>
         </div>
